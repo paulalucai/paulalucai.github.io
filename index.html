@@ -28,6 +28,12 @@
 <script src="http://static.tumblr.com/heqtwlw/FJXn7cy1b/jquery.localscroll-1.2.7-min.js"></script>
  
 <script type="text/javascript">
+    function parallax() {
+        var image = document.getElementById("header");
+        image.style.top = -(window.pageYOffset / 4) + "px";
+    }
+    window.addEventListener("scroll", parallax, false);
+
     $(document).ready(function () {  
         $.localScroll();       
     });
@@ -111,12 +117,17 @@ a {
     position: absolute;
 }
 
-#header img {
+#header {
+    /*background: url(images/crystal.jpg) fixed;*/
     width: 60%;
     height: auto;
     right: 0%;
-    position: absolute;
+    position: fixed;
     display: block;
+} 
+
+#header img {
+    width: 100%;
 }
 
 .title {
@@ -361,7 +372,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nunc ligula. 
 </div>
 
 <div id="header">
-<!--change header image here--><img src="http://i1081.photobucket.com/albums/j358/vivalucci/crystal_zpsps3y1g0w.jpg" />
+<!--change header image here--><img src="images/crystal.jpg" />
 </div>
 
 <!--start of about section-->
